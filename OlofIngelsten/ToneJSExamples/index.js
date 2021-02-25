@@ -1,3 +1,5 @@
 import * as Tone from 'tone';
 
-console.log("helo")
+const synth = new Tone.Synth().toDestination();
+
+synth.triggerAttackRelease("C4", "8n");
