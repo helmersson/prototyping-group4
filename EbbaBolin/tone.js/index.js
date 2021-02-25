@@ -1,5 +1,7 @@
-//create a synth and connect it to the main output (your speakers)
-const synth = new Tone.Synth().toDestination();
-
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
+var notes = ['C', 'D','E', 'F','G','A','B'];
+var html = "";
+for(var i = 0; i < notes.length; i++){
+    var note = notes[i];
+    html += `<div class = "whitenote"></div>`;
+}
+document.getElementById("container").innerHTML = html;

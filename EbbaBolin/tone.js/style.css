@@ -1,0 +1,13 @@
+#container {
+   position: absolute;
+    height: 200px;
+    border: 5px solid black; 
+}
+
+.whitenote {
+    height: 100%;
+    width: 50px;
+    background: white;
+    border-right: 1px solid black;
+    float: left;
+}
