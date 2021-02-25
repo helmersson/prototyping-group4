@@ -1,0 +1,15 @@
+{
+  "name": "renatoribeiro",
+  "version": "1.0.0",
+  "description": "Tone API Test",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RENATO",
+  "license": "ISC",
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
