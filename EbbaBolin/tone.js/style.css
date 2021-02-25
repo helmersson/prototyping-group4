@@ -10,4 +10,14 @@
     background: white;
     border-right: 1px solid black;
     float: left;
+    position: relative;
+}
+
+.blacknote {
+    position: absolute;
+    height: 65%;
+    width: 55%;
+    z-index:1;
+    background: #777;
+    left:68%;
 }
