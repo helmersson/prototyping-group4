@@ -1,0 +1,15 @@
+{
+  "name": "tonejsexamples",
+  "version": "1.0.0",
+  "description": "Some examples trying out the toneJS API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Olof Ingelsten",
+  "license": "MIT",
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
