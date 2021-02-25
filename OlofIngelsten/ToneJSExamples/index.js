@@ -8,7 +8,6 @@ const onButton = document.getElementById("turnOn");
 const herz = document.getElementById("herz");
 herz.innerHTML = slider.value;
 
-
 onButton.addEventListener("mousedown", e => {
   slider.oninput = () => {
     herz.innerHTML = slider.value;
