@@ -2,30 +2,32 @@ body {
     background-color: orange;
 }
 
+h1 {
+    font-size: 50px;
+    color: black;
+    margin-left: 20px;
+}
 button {
-    display: block;
-  border: none;
+    
   background-color: white;
-  padding: 14px 28px;
-  font-size: 65px;
+  padding: 10px 18px;
+  font-size: 25px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-left: 50px;
-  border-radius: 50%;
-  border: 1px solid black;
+ 
+  border: 3px solid black;
 font-family: 'Times New Roman', Times, serif;
+border-radius: 50%;
+
 }
 
-button1 {
-    display: block;
-  border: none;
-  background-color: white;
-  padding: 14px 28px;
-  font-size: 65px;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 80px;
-  border-radius: 50%;
-  border: 1px solid black;
+h2 {
+    
+  font-size: 35px;
+  margin-top: 60px;
+  margin-left: 90px;
+
 font-family: 'Times New Roman', Times, serif;
+
 }
