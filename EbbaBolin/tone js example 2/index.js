@@ -1,12 +1,11 @@
-//const button = document.getElementById("button");
+
 const synth = new Tone.Synth().toDestination();
 const synth1 = new Tone.Synth().toDestination();
 const synth2 = new Tone.Synth().toDestination();
 const synth3 = new Tone.Synth().toDestination();
 const now = Tone.now();
 
-//const guitar = new Tone.Player("./sounds/guitar.wav").toDestination();
-//const drums = new Tone.Player("./sounds/drums.wav").toDestination();
+
 
 document.getElementById("button").addEventListener("mousedown", buttonzero);
 document.getElementById("button1").addEventListener("mousedown", buttonone);
