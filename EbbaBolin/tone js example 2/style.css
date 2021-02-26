@@ -8,75 +8,26 @@ h1 {
     margin-left: 20px;
 }
 button {
-    display: block;
-  border: none;
+    
   background-color: white;
-  padding: 14px 28px;
-  font-size: 65px;
+  padding: 10px 18px;
+  font-size: 25px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 0px;
   margin-left: 50px;
  
   border: 3px solid black;
 font-family: 'Times New Roman', Times, serif;
+border-radius: 50%;
+
 }
 
-.button1 {
-    display: block;
-  border: none;
-  background-color: white;
-  padding: 14px 28px;
-  font-size: 65px;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 80px;
+h2 {
+    
+  font-size: 35px;
+  margin-top: 60px;
+  margin-left: 90px;
 
-  border: 3px solid black;
 font-family: 'Times New Roman', Times, serif;
-}
 
-.buttons {
-    font-size: xx-large;
-    
-}
-
-.hej  {
-    margin-left: 20px;
-    background-color: red;
-    size: 500px;
-    border: 0;
-    line-height: 1.5;
-    padding: 0 20px;
-    font-size: 40px;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    
-}
-.hej2  {
-    background-color: red;
-    size: 500px;
-    border: 0;
-    line-height: 1.5;
-    padding: 0 20px;
-    font-size: 40px;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    
-}
-.hej3  {
-    background-color: red;
-    size: 500px;
-    border: 0;
-    line-height: 1.5;
-    padding: 0 20px;
-    font-size: 40px;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    
 }
