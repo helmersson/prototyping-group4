@@ -1,0 +1,17 @@
+body {
+    background-color: orange;
+}
+
+button {
+    display: block;
+  border: none;
+  background-color: white;
+  padding: 14px 28px;
+  font-size: 65px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+font-family: 'Times New Roman', Times, serif;
+}
