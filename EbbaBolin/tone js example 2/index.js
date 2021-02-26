@@ -6,11 +6,8 @@ const guitar = new Tone.Player("./sounds/guitar.wav").toDestination();
 
 document.getElementById("button").addEventListener("click", mouseclick);
 
-function mouseclick (){
-
-  }
-
-    
-    
-    
-    
+  function mouseclick(){
+    Tone.loaded().then(() => {
+        guitar.start();
+    });
+  } 
