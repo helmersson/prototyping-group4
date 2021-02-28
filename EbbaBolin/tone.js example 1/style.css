@@ -1,0 +1,39 @@
+#container {
+    position:absolute;
+    height:200px;
+    border:8px solid black;
+    top:calc(50% - 100px);
+    left:calc(50% - 400px);
+
+}
+
+.whitenote {
+    height: 100%;
+    width: 50px;
+    background: white;
+    border-right: 1px solid black;
+    float: left;
+    position: relative;
+}
+
+.blacknote {
+    position: absolute;
+    height: 65%;
+    width: 55%;
+    z-index:1;
+    background: #777;
+    left:71%;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+h1 {
+    font-size: 50px;
+    color: black;
+    position: absolute;
+    top:calc(30% - 100px);
+    left:calc(60% - 400px);
+ 
+}
