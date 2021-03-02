@@ -2,6 +2,7 @@
 const button = document.getElementById("button");
 const buttonStop = document.getElementById("buttonStop");
 
+let count = 0;
 
 const noise = new Tone.Noise("pink");
 
@@ -23,20 +24,22 @@ function bee() {
     //start the autofilter LFO
     autoFilter.start()
 
-    Tone.Transport.start();
+
 
 
 }
 
 
-
-
 button.addEventListener("click", () => {
+    count++;
 
-    bee();
-
+    if (count === 1) {
+        Tone.start();
+        bee();
+    }
 });
 
 buttonStop.addEventListener("click", () => {
+    count = 0;
     noise.stop();
 });
