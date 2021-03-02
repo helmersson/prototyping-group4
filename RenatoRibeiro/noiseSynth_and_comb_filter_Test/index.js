@@ -9,7 +9,8 @@ const noise = new Tone.Noise("pink");
 
 function bee() {
 
-    noise.start();
+    now = Tone.now();
+    noise.sync().start(now);
 
 
     //make an autofilter to shape the noise
@@ -24,7 +25,7 @@ function bee() {
     //start the autofilter LFO
     autoFilter.start()
 
-
+    Tone.Transport.start();
 
 
 }
@@ -37,9 +38,14 @@ button.addEventListener("click", () => {
         Tone.start();
         bee();
     }
+
 });
 
 buttonStop.addEventListener("click", () => {
     count = 0;
-    noise.stop();
+    now = 0;
+
+    //noise.stop();
+    Tone.Transport.stop();
+    Tone.Transport.clear();
 });
