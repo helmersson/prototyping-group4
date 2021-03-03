@@ -1,4 +1,5 @@
-
+//the synth liberary from tone
+//ahad to create different tone synth to be able to make the different notes release instead of everything
 const synth = new Tone.Synth().toDestination();
 const synth1 = new Tone.Synth().toDestination();
 const synth2 = new Tone.Synth().toDestination();
@@ -6,7 +7,7 @@ const synth3 = new Tone.Synth().toDestination();
 const now = Tone.now();
 
 
-
+//madd eventlistners to each button. mousedown
 document.getElementById("button").addEventListener("mousedown", buttonzero);
 document.getElementById("button1").addEventListener("mousedown", buttonone);
 document.getElementById("button2").addEventListener("mousedown", buttontwo);
@@ -17,16 +18,20 @@ document.getElementById("button6").addEventListener("mousedown", buttonsix);
 document.getElementById("button7").addEventListener("mousedown", buttonseven);
 document.getElementById("button8").addEventListener("mousedown", buttoneight);
 
+
+//each ON button has a eventlistener that triggerattack the synth sounds. 
   function buttonzero(){
   
     synth.triggerAttack("D4", now)
+    //the color changes too if you press the button ON
      document.getElementById("button").style.backgroundColor = "lightpink";
      document.getElementById("button1").style.backgroundColor = "white";
     };
-
+//each OFF button has a eventlistener that triggerealease the synth sounds. 
     function buttonone(){
   
       synth.triggerRelease(now)
+      //the color changes too if you press the button OFF
        document.getElementById("button1").style.backgroundColor = "lightpink";
        document.getElementById("button").style.backgroundColor = "white";
       };
@@ -75,7 +80,7 @@ document.getElementById("button8").addEventListener("mousedown", buttoneight);
                    document.getElementById("button7").style.backgroundColor = "lightpink";
                    document.getElementById("button6").style.backgroundColor = "white";
                   };
-
+//last button that turn all the synth sounds off. trickerrealease. changes all the color into off buttons.
                   function buttoneight(){
                     synth.triggerRelease(now)
                     synth1.triggerRelease(now)
