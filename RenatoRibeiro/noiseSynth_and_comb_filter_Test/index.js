@@ -2,50 +2,54 @@
 const button = document.getElementById("button");
 const buttonStop = document.getElementById("buttonStop");
 
-let count = 0;
+
 
 const noise = new Tone.Noise("pink");
 
 
 function bee() {
 
-    now = Tone.now();
-    noise.sync().start(now);
+    noise.start();
 
 
-    //make an autofilter to shape the noise
-    var autoFilter = new Tone.AutoFilter({
-        "frequency": "8m",
-        "min": 800,
-        "max": 15000
+    /*//make an combFilter to shape the noise
+    let combFilter = new Tone.LowpassCombFilter({
+        delayTime: 0.1,
+        resonance: 0.5,
+        dampening: 3000
+    }).connect(Tone.Master);*/
+
+
+    let phaser = new Tone.Phaser({
+        frequency: 0.5,
+        octaves: 3,
+        stages: 10,
+        Q: 10,
+        baseFrequency: 350
     }).connect(Tone.Master);
 
-    //connect the noise
-    noise.connect(autoFilter);
-    //start the autofilter LFO
-    autoFilter.start()
+    let filter = new Tone.Filter(1200, "highpass").connect(phaser);
 
-    Tone.Transport.start();
+    /*let distortion = new Tone.Distortion({
+        distortion: 0.4,
+    }).connect(phaser); */
+
+
+    //connect the noise
+    noise.connect(filter);
+    //noise.connect(phaser);
+    //noise.connect(combfilter);
+    //noise.connect(distortion);
 
 
 }
 
-
 button.addEventListener("click", () => {
-    count++;
-
-    if (count === 1) {
-        Tone.start();
-        bee();
-    }
-
+    Tone.start();
+    bee();
 });
 
 buttonStop.addEventListener("click", () => {
-    count = 0;
-    now = 0;
-
-    //noise.stop();
-    Tone.Transport.stop();
-    Tone.Transport.clear();
+    noise.stop();
+    location.reload(true);
 });
