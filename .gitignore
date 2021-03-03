@@ -1,2 +1,5 @@
-WilhelmHelmersson/tone.js test/.DS_Store
-WilhelmHelmersson/.DS_Store
+node_modules
+build
+npm-debug.log
+.env
+.DS_Store
