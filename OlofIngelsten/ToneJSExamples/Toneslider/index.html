@@ -4,15 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Tone Slider Example</title>
 </head>
 
 <body>
-  <input type="range" min="440" max="880" value="660" id="slider">
-  <h1>Frequency <span id="herz"></span> hz</h1>
-  <button id="turnOff">Turn off</button>
-  <button id="turnOn">Turn on</button>
-
+  <div>
+    <input type="range" min="440" max="880" value="660" id="slider">
+    <h1>Frequency: <span id="herz"></span> hz</h1>
+    <button id="turnOff">Turn off</button>
+    <button id="turnOn">Turn on</button>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>
   <script src="./index.js"></script>
 </body>
