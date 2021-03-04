@@ -18,30 +18,33 @@ const beeFour = new Tone.FMSynth().toDestination();
 //On input for the distance slider; triggering and releasing the voices
 distanceSlider.oninput = () => {
   Tone.start();
-
+  const val = distanceSlider.value;
   let now = Tone.now();
 
   //Setting the cutoff values
-  if (distanceSlider.value < 25) {
+  if (val < 25) {
     beeFour.triggerAttack("B4", now, 0.2)
-  } else if (distanceSlider.value < 50) {
+  } else {
     beeFour.triggerRelease(now);
+  }
 
+  if (val < 50) {
     beeThree.triggerAttack("G4", now, 0.2)
-  } else if (distanceSlider.value < 100) {
-    beeFour.triggerRelease(now);
+  } else {
     beeThree.triggerRelease(now);
+  }
 
+  if (val < 100) {
     beeTwo.triggerAttack("E4", now, 0.2)
-  } else if (distanceSlider.value <= 150) {
-    beeFour.triggerRelease(now);
-    beeThree.triggerRelease(now);
+  } else {
     beeTwo.triggerRelease(now);
+  }
 
+  if (val <= 150) {
     beeOne.triggerAttack("C4", now, 0.2)
   }
 
-  distanceText.innerHTML = distanceSlider.value / 100;
+  distanceText.innerHTML = val / 100;
 };
 
 //Signal options for the amount of detuning
