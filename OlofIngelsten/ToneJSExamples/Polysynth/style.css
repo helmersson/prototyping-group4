@@ -1,0 +1,10 @@
+button {
+  width: 25%;
+  height: 10rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+div {
+  margin: 10rem;
+}
