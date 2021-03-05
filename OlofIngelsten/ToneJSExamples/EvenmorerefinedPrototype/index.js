@@ -78,3 +78,7 @@ moistureSlider.oninput = () => {
 
   moistureText.innerHTML = moistureSlider.value;
 }
+
+//TODO
+//  1.Get filters working with the moisture slider
+//  2.Connect to arduino
