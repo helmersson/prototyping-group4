@@ -1,6 +1,5 @@
 //the synth liberary from tone
-//adding specifif notes
-
+//adding specific notes
 var synth = new Tone.PolySynth().toMaster();
 var notes = ['C', 'D','E', 'F','G','A','B'];
 
@@ -19,7 +18,7 @@ for(var i = 0; i < notes.length; i++){
     //html sting with div inside - white note
     //template strings
     html += `<div class='whitenote' onmousedown='noteDown(this, false)' onmouseup='noteUp(this,false)' onmouseleave='noteUp(this,false)' data-note='${note + (octave+4)}'>`;
-
+    //adding black notes
     if (hasSharp) {
       html += `<div class='blacknote' onmousedown='noteDown(this, true)' onmouseup='noteUp(this, true)' onmouseleave='noteUp(this,true)' data-note='${note + '#' + (octave+4)}'>
            
@@ -40,6 +39,8 @@ function noteDown (elem,isSharp) {
     var note = elem.dataset.note;
     //alert(note);
     elem.style.background = isSharp ? 'black' : '#ccc';
+    //trigger the note
     synth.triggerAttackRelease(note,"16n");
+    //divid the white and balck note so you an press them seperatly
     event.stopPropagation();
 }
