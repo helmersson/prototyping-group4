@@ -58,6 +58,7 @@ let filterVariable = new Tone.Filter({
     gain: -6
 }).connect(filterFour);
 
+
 //create distortion and connect to filterFour
 let distortion = new Tone.Distortion({
     distortion: 0.6,
@@ -86,9 +87,9 @@ buttonStop.addEventListener("click", () => {
 
 distanceSlider.oninput = function () {
     output.innerHTML = this.value;
+    filterVariable.frequency = this.value;
 
 
-    console.log(this.value);
 };
 
 let output = document.getElementById("value");
