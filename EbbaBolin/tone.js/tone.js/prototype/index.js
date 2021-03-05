@@ -4,8 +4,8 @@ const button1 = document.getElementById("button1");
 //const synth = new Tone.Synth().toDestination();
 const now = Tone.now();
 
-const heartbeat = new Tone.Player("./sounds/heartbeat.wav").toDestination();
-const heartbeat2 = new Tone.Player("./sounds/heartbeat2.wav").toDestination();
+const heartbeat = new Tone.Player("./assets/heartbeat.wav").toDestination();
+const heartbeat2 = new Tone.Player("./assets/heartbeat2.wav").toDestination();
 //const vibration = new Tone.Player("./sounds/vibration.wav").toDestination();
 
 //eventlisteners mousedown and mosuseup
