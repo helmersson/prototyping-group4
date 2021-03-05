@@ -15,7 +15,7 @@ function sandMan() {
   synth.triggerAttackRelease("G4", "8n", now + 0.5);
   synth.triggerAttackRelease("B4", "8n", now + 0.75);
 
-  synth.triggerAttackRelease("A2", "2n", now + 1);
+  synth.triggerAttackRelease("C#3", "2n", now + 1);
   synth.triggerAttackRelease("A4", "8n", now + 1);
   synth.triggerAttackRelease("G4", "8n", now + 1.25);
 
