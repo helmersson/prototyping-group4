@@ -1,5 +1,5 @@
 //the synth liberary from tone
-//ahad to create different tone synth to be able to make the different notes release instead of everything
+//had to create different tone synth to be able to make the different notes release, instead of everything
 const synth = new Tone.Synth().toDestination();
 const synth1 = new Tone.Synth().toDestination();
 const synth2 = new Tone.Synth().toDestination();
@@ -7,7 +7,7 @@ const synth3 = new Tone.Synth().toDestination();
 const now = Tone.now();
 
 
-//madd eventlistners to each button. mousedown
+//made eventlistners to each button. mousedown
 document.getElementById("button").addEventListener("mousedown", buttonzero);
 document.getElementById("button1").addEventListener("mousedown", buttonone);
 document.getElementById("button2").addEventListener("mousedown", buttontwo);
