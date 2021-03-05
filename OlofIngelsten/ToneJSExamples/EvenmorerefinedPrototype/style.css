@@ -15,11 +15,3 @@ div {
 input {
   width: 100%;
 }
-
-button {
-  font-size: 1.5rem;
-  font-weight: bold;
-  height: 3rem;
-  width: 100%;
-  display: inline-block;
-}
