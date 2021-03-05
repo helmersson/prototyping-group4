@@ -19,6 +19,7 @@
 }
 
 .blacknote {
+    /*realtive to the white note*/
     position: absolute;
     height: 65%;
     width: 55%;
