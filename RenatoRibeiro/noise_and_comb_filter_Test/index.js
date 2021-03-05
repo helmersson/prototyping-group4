@@ -14,7 +14,7 @@ const noise = new Tone.Noise("pink");
 function bee() {
 
     //Noise tone connects to distortion (at the bottom)==>Distortion connects to filters==>Filters
-    //connect to combFilter==> Comfilter connects to master output
+    //connect to combFilter==> Combfilter connects to master output
 
 
     //start noise engine
