@@ -1,10 +1,13 @@
+//Create the synth and get a reference to the html button element
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 const button = document.getElementById("onButton");
 
 //A function that triggers the first two bars of Mr.Sandman
 function sandMan() {
+  //Get a reference to the time of the activation of the function
   now = Tone.now()
 
+  //synth.triggerAttackRelease("Note name", "Duration", "When to activate");
   synth.triggerAttackRelease("C4", "8n", now);
   synth.triggerAttackRelease("E4", "8n", now + 0.25);
 

@@ -1,26 +1,50 @@
+//get element by id
 const button = document.getElementById("button");
 const button1 = document.getElementById("button1");
-const synth = new Tone.Synth().toDestination();
+//const synth = new Tone.Synth().toDestination();
 const now = Tone.now();
 
 const heartbeat = new Tone.Player("./sounds/heartbeat.wav").toDestination();
-const vibration = new Tone.Player("./sounds/vibration.wav").toDestination();
+const heartbeat2 = new Tone.Player("./sounds/heartbeat2.wav").toDestination();
+//const vibration = new Tone.Player("./sounds/vibration.wav").toDestination();
 
+//eventlisteners mousedown and mosuseup
+document.getElementById("button1").addEventListener("mousedown", heartbeatstart);
+document.getElementById("button1").addEventListener("mouseup", heartbeatstop);
+document.getElementById("button").addEventListener("mousedown", heartbeatcrazystart);
+document.getElementById("button").addEventListener("mouseup", heartbeatcrazystop);
 
-document.getElementById("button1").addEventListener("click", heartbeatvibration);
-
-function heartbeatvibration(){
+//triggers start the sound on button heartbeat
+function heartbeatstart(){
     Tone.loaded().then(() => {
     heartbeat.start();
         document.getElementById("button1").style.backgroundColor = "darkred";
 });
 } 
 
-document.getElementById("button").addEventListener("click", vibrationcrazy);
-
-function vibrationcrazy(){
+//stop the sound
+function heartbeatstop(){
     Tone.loaded().then(() => {
-    vibration.start();
-        document.getElementById("button").style.backgroundColor = "darkgrey";
+    heartbeat.stop();
+        document.getElementById("button1").style.backgroundColor = "white";
 });
 } 
+
+
+//triggers start the sound on button crazy heartbeat
+function heartbeatcrazystart(){
+    heartbeat2.playbackRate = 1.25;
+    Tone.loaded().then(() => {
+    heartbeat2.start();
+        document.getElementById("button").style.backgroundColor = "darkgrey";
+});
+}
+//stop the sound to play
+function heartbeatcrazystop(){
+    heartbeat2.playbackRate = 1.25;
+    Tone.loaded().then(() => {
+    heartbeat2.stop();
+        document.getElementById("button").style.backgroundColor = "white";
+});
+}
+

@@ -1,4 +1,4 @@
-//create a synth and connect it to the main output (your speakers)
+//Create a synth and connect it to the main output (your speakers)
 const synth = new Tone.FMSynth().toDestination();
 
 //Gets references to the html elements
@@ -10,7 +10,7 @@ const herz = document.getElementById("herz");
 //Display the slider value
 herz.innerHTML = slider.value;
 
-//Tuen on the sound when the button is pressed
+//Turn on the sound when the button is pressed
 onButton.addEventListener("mousedown", e => {
   slider.oninput = () => {
     herz.innerHTML = slider.value;
