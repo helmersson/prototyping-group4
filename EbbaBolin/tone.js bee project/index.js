@@ -1,3 +1,4 @@
+//get element by id
 const button = document.getElementById("button");
 const button1 = document.getElementById("button1");
 //const synth = new Tone.Synth().toDestination();
@@ -13,7 +14,7 @@ document.getElementById("button1").addEventListener("mouseup", heartbeatstop);
 document.getElementById("button").addEventListener("mousedown", heartbeatcrazystart);
 document.getElementById("button").addEventListener("mouseup", heartbeatcrazystop);
 
-//triggers start the sound
+//triggers start the sound on button heartbeat
 function heartbeatstart(){
     Tone.loaded().then(() => {
     heartbeat.start();
@@ -30,7 +31,7 @@ function heartbeatstop(){
 } 
 
 
-
+//triggers start the sound on button crazy heartbeat
 function heartbeatcrazystart(){
     heartbeat2.playbackRate = 1.25;
     Tone.loaded().then(() => {
@@ -38,7 +39,7 @@ function heartbeatcrazystart(){
         document.getElementById("button").style.backgroundColor = "darkgrey";
 });
 }
-
+//stop the sound to play
 function heartbeatcrazystop(){
     heartbeat2.playbackRate = 1.25;
     Tone.loaded().then(() => {
@@ -47,7 +48,3 @@ function heartbeatcrazystop(){
 });
 }
 
-//add transport instead but it is not working
-/*
-document.querySelector("button").addEventListener("start", () => Tone.Transport.start());
-        document.querySelector("button").addEventListener("stop", () => Tone.Transport.stop());*/
