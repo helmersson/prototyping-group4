@@ -25,7 +25,7 @@ let filterOne = new Tone.Filter({
     frequency: 350,
     rolloff: -12,
     Q: 1,
-    gain: -6
+    gain: -24
 }).connect(combFilter);
 
 //create notch filter to shape the sound and connect to filterOne
@@ -43,27 +43,28 @@ let filterThree = new Tone.Filter({
 //create Lowpass filter to take out high frequencies and connect to filterThree
 let filterFour = new Tone.Filter({
     type: "lowpass",
-    frequency: 6000,
+    frequency: 3000,
     rolloff: -24,
     Q: 0.5,
     gain: -20
 }).connect(filterThree);
 
 //create variable HighPass filter that changes according to slider
-let filterVariable = new Tone.Filter({
-    type: "highpass",
-    frequency: 350,
-    rolloff: -12,
-    Q: 1,
-    gain: -6
+let pitchShift = new Tone.PitchShift({
+    pitch: 0,
+    windowSize: 0.1,
+    delayTime: 0,
+    feedback: 0
 }).connect(filterFour);
+
+
 
 
 //create distortion and connect to filterFour
 let distortion = new Tone.Distortion({
-    distortion: 0.6,
-    oversample: "4x"
-}).connect(filterVariable);
+    distortion: 0.2,
+    oversample: "2x"
+}).connect(pitchShift);
 
 
 //connect the noise to distortion
@@ -72,6 +73,7 @@ noise.connect(distortion);
 //*------------------------------------------------------------------------------------*//
 //define what click on buttons do
 button.addEventListener("click", () => {
+    Tone.start();
     //start noise engine
     noise.start();
 });
@@ -87,10 +89,23 @@ buttonStop.addEventListener("click", () => {
 
 distanceSlider.oninput = function () {
     output.innerHTML = this.value;
-    filterVariable.frequency = this.value;
 
+    //transform distance value into pitchShift value 
+    // taken from: https://stackoverflow.com/questions/8684327/c-map-number-ranges
+    x = (this.value - 1) / (50 - 1);
+    result = 20 + (3 - 20) * x;
+
+    //round to no decimal cases(pitch value doesn't have decimal cases)
+    resultRound = result.toFixed(0);
+
+    //set pitchShift value
+    pitchShift.pitch = resultRound;
 
 };
+
+
+
+
 
 let output = document.getElementById("value");
 output.innerHTML = distanceSlider.value;
