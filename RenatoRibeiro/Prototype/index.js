@@ -1,4 +1,6 @@
 
+//Renato Ribeiro bee prototype 2021 API LAB
+
 const distanceSlider = document.getElementById("distance");
 
 //Instantiate two buttons to start and stop sound
@@ -49,7 +51,7 @@ let filterFour = new Tone.Filter({
     gain: -20
 }).connect(filterThree);
 
-//create variable HighPass filter that changes according to slider
+//create variable pitchShift that changes pitch according to distance(slider)
 let pitchShift = new Tone.PitchShift({
     pitch: 0,
     windowSize: 0.1,
@@ -85,7 +87,7 @@ buttonStop.addEventListener("click", () => {
     location.reload(true);
 });
 
-
+//define what slider does
 
 distanceSlider.oninput = function () {
     output.innerHTML = this.value;
@@ -104,9 +106,7 @@ distanceSlider.oninput = function () {
 };
 
 
-
-
-
+//present distance value on page
 let output = document.getElementById("value");
 output.innerHTML = distanceSlider.value;
 
