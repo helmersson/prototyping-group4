@@ -9,6 +9,6 @@ This example prototypes how the distance influences the bee sound. Using a slide
 The installation is done by using Tone.js CDN (https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js).
 
 ### Contributions
-This prototype uses the "Filter","PitchShift", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
+This prototype uses the "Noise","CombFilter", "Filter","PitchShift", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
 
 
