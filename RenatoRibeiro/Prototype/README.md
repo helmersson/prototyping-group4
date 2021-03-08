@@ -10,5 +10,6 @@ The installation is done by using Tone.js CDN (https://cdnjs.cloudflare.com/ajax
 
 ### Contributions
 This prototype uses the "Noise","CombFilter", "Filter","PitchShift", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
+It used this synthesis tutorial as inspiration : "https://vimeo.com/358151958"
 
 
