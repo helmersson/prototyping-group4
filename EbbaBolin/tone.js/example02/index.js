@@ -1,7 +1,8 @@
 //the synth liberary from tone
 //adding specific notes
-var synth = new Tone.PolySynth().toMaster();
+var synth = new Tone.PolySynth().toDestination();
 var notes = ['C', 'D','E', 'F','G','A','B'];
+
 
 //to be used later
 var html = "";
