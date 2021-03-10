@@ -9,4 +9,6 @@ This example creates a possible bee sound using noise generators, distortion and
 The installation is done by using Tone.js CDN (https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js).
 
 ### Contributions
+The code was done by Renato Ribeiro.
+
 This prototype uses the "Noise", "Filter","CombFilter", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
