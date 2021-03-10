@@ -89,20 +89,6 @@ let maxPitchShiftRange = 0;
 
 let prevVal = -1;
 
-//*------------------------------------------------------------------------------------*//
-//define what click on buttons do
-button.addEventListener("click", () => {
-    Tone.start();
-    //start noise engine
-    noise.start();
-});
-
-buttonStop.addEventListener("click", () => {
-    //stop sound
-    noise.stop();
-    //reload page so the sound doesn't add on top of the previous sound when "start" is pressed.
-    location.reload(true);
-});
 
 //define what slider does
 
@@ -121,6 +107,8 @@ distanceSlider.oninput = function () {
     //a condition is created. Only updates the pitch value if the current slider value (currentVal)
     //is different from the previous slider value (prevVal)
 
+
+
     if (currentVal != prevVal) {
         //set pitchShift value with current slider value
         pitchShift.pitch = currentVal;
@@ -129,6 +117,20 @@ distanceSlider.oninput = function () {
     }
 };
 
+
+//define what click on buttons do
+button.addEventListener("click", () => {
+    Tone.start();
+    //start noise engine
+    noise.start();
+});
+
+buttonStop.addEventListener("click", () => {
+    //stop sound
+    noise.stop();
+    //reload page so the sound doesn't add on top of the previous sound when "start" is pressed.
+    location.reload(true);
+});
 
 //present distance value on page
 let output = document.getElementById("value");
