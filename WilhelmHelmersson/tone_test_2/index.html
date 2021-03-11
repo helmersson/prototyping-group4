@@ -4,10 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="button">Press to play</button>
+    <div>
+        <h1> <span id="bpmText"></span>bpm</h1>
+        <input type="range" min="50" max="200" value="120" id="bpmSlider">
+    </div>
+    <button id="button">Play/pause</button>
 </body>
 <script src="https://unpkg.com/@tonejs/midi@2.0.26/build/Midi.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>

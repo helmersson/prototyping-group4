@@ -28,6 +28,7 @@ function sequencer() {
         let percInputs = document.querySelector(
             `.perc input:nth-child(${step+1})`
         );
+        //sees if a checkboxes is checked it plays a note at that time
         if(hihatInputs.checked){
             hihat.start();
         }
@@ -43,5 +44,5 @@ function sequencer() {
         index++;
     }
 }
-
+//starts the function
 sequencer();

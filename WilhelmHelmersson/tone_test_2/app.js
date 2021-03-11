@@ -1,222 +1,40 @@
-const synth = new Tone.PolySynth(Tone.Synth, {
-    oscillator: {
-        type: "fatsawtooth",
-        count: 3,
-        spread: 30
-    },
-    envelope: {
-        attack: 0.01,
-        decay: 0.1,
-        sustain: 0.5,
-        release: 0.4,
-        attackCurve: "exponential"
-    },
-}).toDestination();
-        
-// Van Halen - Jump MIDI from http://www.midiworld.com/files/1121/
-// converted using 
-const part = new Tone.Part(((time, note) => {
-    synth.triggerAttackRelease(note.noteName, note.duration, time, note.velocity);
-}), [{
-    time: "192i",
-    noteName: "G4",
-    velocity: 0.8110236220472441,
-    duration: "104i"
-},
-{
-    time: "192i",
-    noteName: "B4",
-    velocity: 0.7874015748031497,
-    duration: "104i"
-},
-{
-    time: "192i",
-    noteName: "D5",
-    velocity: 0.8031496062992126,
-    duration: "104i"
-},
-{
-    time: "480i",
-    noteName: "G4",
-    velocity: 0.7559055118110236,
-    duration: "104i"
-},
-{
-    time: "480i",
-    noteName: "C5",
-    velocity: 0.6850393700787402,
-    duration: "104i"
-},
-{
-    time: "480i",
-    noteName: "E5",
-    velocity: 0.6771653543307087,
-    duration: "104i"
-},
-{
-    time: "768i",
-    noteName: "F4",
-    velocity: 0.8661417322834646,
-    duration: "104i"
-},
-{
-    time: "768i",
-    noteName: "A4",
-    velocity: 0.8346456692913385,
-    duration: "104i"
-},
-{
-    time: "768i",
-    noteName: "C5",
-    velocity: 0.8188976377952756,
-    duration: "104i"
-},
-{
-    time: "1056i",
-    noteName: "F4",
-    velocity: 0.7007874015748031,
-    duration: "104i"
-},
-{
-    time: "1056i",
-    noteName: "A4",
-    velocity: 0.6850393700787402,
-    duration: "104i"
-},
-{
-    time: "1056i",
-    noteName: "C5",
-    velocity: 0.6614173228346457,
-    duration: "104i"
-},
-{
-    time: "1248i",
-    noteName: "G4",
-    velocity: 0.6771653543307087,
-    duration: "104i"
-},
-{
-    time: "1248i",
-    noteName: "B4",
-    velocity: 0.6771653543307087,
-    duration: "104i"
-},
-{
-    time: "1248i",
-    noteName: "D5",
-    velocity: 0.7165354330708661,
-    duration: "104i"
-},
-{
-    time: "1440i",
-    noteName: "G4",
-    velocity: 0.8818897637795275,
-    duration: "248i"
-},
-{
-    time: "1440i",
-    noteName: "B4",
-    velocity: 0.84251968503937,
-    duration: "248i"
-},
-{
-    time: "1440i",
-    noteName: "D5",
-    velocity: 0.8818897637795275,
-    duration: "248i"
-},
-{
-    time: "1728i",
-    noteName: "G4",
-    velocity: 0.8267716535433071,
-    duration: "104i"
-},
-{
-    time: "1728i",
-    noteName: "C5",
-    velocity: 0.8031496062992126,
-    duration: "104i"
-},
-{
-    time: "1728i",
-    noteName: "E5",
-    velocity: 0.8188976377952756,
-    duration: "104i"
-},
-{
-    time: "2016i",
-    noteName: "F4",
-    velocity: 0.7086614173228346,
-    duration: "104i"
-},
-{
-    time: "2016i",
-    noteName: "A4",
-    velocity: 0.7244094488188977,
-    duration: "104i"
-},
-{
-    time: "2016i",
-    noteName: "C5",
-    velocity: 0.7007874015748031,
-    duration: "104i"
-},
-{
-    time: "2208i",
-    noteName: "C4",
-    velocity: 0.9921259842519685,
-    duration: "296i"
-},
-{
-    time: "2208i",
-    noteName: "F4",
-    velocity: 0.968503937007874,
-    duration: "200i"
-},
-{
-    time: "2208i",
-    noteName: "A4",
-    velocity: 0.9606299212598425,
-    duration: "208i"
-},
-{
-    time: "2400i",
-    noteName: "E4",
-    velocity: 0.7559055118110236,
-    duration: "104i"
-},
-{
-    time: "2400i",
-    noteName: "G4",
-    velocity: 0.7007874015748031,
-    duration: "104i"
-},
-{
-    time: "2592i",
-    noteName: "C4",
-    velocity: 0.968503937007874,
-    duration: "488i"
-},
-{
-    time: "2592i",
-    noteName: "D4",
-    velocity: 0.9448818897637795,
-    duration: "488i"
-},
-{
-    time: "2592i",
-    noteName: "G4",
-    velocity: 0.937007874015748,
-    duration: "488i"
+//fetches the html elements
+const bpm = document.getElementById("bpmSlider");
+const bpmText = document.getElementById("bpmText");
+//sets the bpm text to 120
+bpmText.textContent = 120;
+// easy solution for a toggle play button
+let playerOn = false
+//creates a synth 
+const synth = new Tone.Synth();
+synth.oscillator.type = 'sine';
+synth.envelope.attack = 0.001;
+synth.envelope.sustain = 0.5;
+
+const gain  = new Tone.Gain(0.4);
+synth.connect(gain);
+gain.toDestination();
+
+const pattern = new Tone.Pattern((time, note) => {
+// the order of the notes passed in depends on the pattern
+synth.triggerAttackRelease(note, "8n", time)
+}, ["C2", "D4", "E5", "A6"], "upDown");
+
+Tone.Transport.bpm.value = 120
+pattern.start();
+
+//hacked the button to make it work like a toggle
+document.getElementById('button').addEventListener('click', () => {
+  playerOn = !playerOn
+  if(playerOn) {
+    Tone.Transport.start();
+  } else {
+    Tone.Transport.pause();
+  }
+})
+//connects the bpm value with the slider and the text telling you what bpm your on
+bpm.oninput = () => {
+  Tone.Transport.bpm.rampTo(bpm.value)
+  bpmText.textContent = bpm.value
+  
 }
-]).start(0);
-
-part.loop = true;
-part.loopEnd = "4m";
-
-Tone.Transport.bpm.value = 132;
-
-
-
-// bind the interface
-document.querySelector("button").addEventListener("start", () => Tone.Transport.start());
