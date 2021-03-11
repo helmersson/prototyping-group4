@@ -7,6 +7,8 @@ This prototype explores one of the possible applications of how one might connec
 For all examples i use the Tone.js CDN:
 > <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>
 To use tone this way you only need to put this script tag in the body of the main HTML document of any new Tone projects.
+
+**To open my prototypes please use the Live Server plugin in Visual Studio Code**
 ## Contributions
 This is a continuation of the Toneslider prototype and is therefore very loosely based on the ["Hello Tone"](https://tonejs.github.io/) example. 
 The mapping function is from user _Enijar_ from the [GitHub forum](https://gist.github.com/xposedbones/75ebaef3c10060a3ee3b246166caab56)
