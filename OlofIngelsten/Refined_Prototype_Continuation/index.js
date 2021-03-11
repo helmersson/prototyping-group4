@@ -56,6 +56,7 @@ bee03.connect(filter);
 beeHive.connect(filter);
 forestSounds.connect(filter);
 
+//Declaring the cutoff values for the different sounds.
 distanceSlider.oninput = () => {
   Tone.start();
   const val = distanceSlider.value;
@@ -92,7 +93,6 @@ distanceSlider.oninput = () => {
 //The moisture slider changes the affected frequencies of the lowpass filter
 moistureSlider.oninput = () => {
   filter.frequency.value = map(moistureSlider.value, 0, 100, 100, 10000);
-  console.log(filter.frequency.value);
   moistureText.innerHTML = moistureSlider.value;
 }
 

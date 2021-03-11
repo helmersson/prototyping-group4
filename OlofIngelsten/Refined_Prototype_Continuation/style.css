@@ -1,11 +1,13 @@
 body {
-  background-color: rgb(194, 194, 194);
+  background-color: #d88144;
+  width: 100%;
 }
 
 div {
-  box-shadow: 0px 0px 20px rgb(93, 93, 93);
+  box-shadow: 0px 0px 20px rgb(78, 26, 2);
   border-radius: 10px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: #ffc357;
   margin: auto;
   margin-top: 1rem;
   padding: 1rem;
@@ -14,4 +16,8 @@ div {
 
 input {
   width: 100%;
+}
+
+h1 {
+  color: rgb(235, 235, 235);
 }
