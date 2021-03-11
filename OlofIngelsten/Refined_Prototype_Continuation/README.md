@@ -1,6 +1,6 @@
-# Refined Bee Slider Prototype
+# Continuation of the refined bee slider prototype
 ## What does it do?
-This is meant as a prototype that explores the interaction we expect from our Bee project, with a focus on how the sound might modulate and change based on the user's ditance from the bee and the moisture of the soil. The distance slider adds a synth after some cutoff values and the moisture slider detunes the synths when the percentage is lowered makig the overall sound inharmonious.
+Functionally this is tha same as the first refined prototype, however this one uses MP3 sounds instead of synthesizers and the moisture slider controls a lowpass filter value instead of detuning.
 ## What does this example explore?
 This prototype explores one of the possible applications of how one might connect Tone to the DOM with a concrete example of our Bee project. A further exploration of this would be to connect it through Node Express and Johnny Five to an arduino with the correct corresponding sensors.  
 ## Installation & usage

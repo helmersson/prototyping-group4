@@ -1,0 +1,23 @@
+body {
+  background-color: #d88144;
+  width: 100%;
+}
+
+div {
+  box-shadow: 0px 0px 20px rgb(78, 26, 2);
+  border-radius: 10px;
+  /* background-color: white; */
+  background-color: #ffc357;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 25%;
+}
+
+input {
+  width: 100%;
+}
+
+h1 {
+  color: rgb(238, 238, 238);
+}

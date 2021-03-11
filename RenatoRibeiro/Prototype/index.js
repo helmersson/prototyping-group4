@@ -108,10 +108,10 @@ distanceSlider.oninput = function () {
     //is different from the previous slider value (prevVal)
 
 
-
     if (currentVal != prevVal) {
         //set pitchShift value with current slider value
         pitchShift.pitch = currentVal;
+
         //update previous slider value variable
         prevVal = currentVal;
     }

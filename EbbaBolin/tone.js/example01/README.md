@@ -1,12 +1,12 @@
 # Create your own symphony
 ## Example 1 
-Buttons to be able to create your own symphony on the webpage. With this examples I started to learn about the tone.js library and about the triggerAttack and triggerRelease. I eloberated on this together with synth notes from their library.
+In this project I have created buttons to be able to create your own symphony on the webpage. With this examples I started to learn and explore about the tone.js library and the triggerAttack and triggerRelease. I eloberated on this together with synth notes from their library.
 
 ## Features
-I set up html, css and javascript files. I created buttons were the different buttons trigger a different sound from the tone.js synth library. The "off" notes releases the synth notes. In this way you can "create your own symphony" with the different notes.In the end I styles the webside.
+I set up html, css and javascript files. I created "on" buttons were they trigger different sounds from the tone.js synth library. The "off" buttons releases the synth notes. In this way you can "create your own symphony" with the different notes. In the end I styled the webbside.
 
 ## Installation
-I installed Tone.js with cdn. I put this script tag in the html to access the Tone.js library.  
+I installed Tone.js with CDN. I put this script tag in the html to access the Tone.js library.  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>
 
 ## Contribution
