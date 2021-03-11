@@ -20,4 +20,6 @@ The code was done by Renato Ribeiro.
 This prototype uses the "Noise","CombFilter", "Filter","PitchShift", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
 It used this synthesis tutorial as inspiration : "https://vimeo.com/358151958"
 
+The mapping function was made with the help of "https://stackoverflow.com/questions/8684327/c-map-number-ranges"
+
 
