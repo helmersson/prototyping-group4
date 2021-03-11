@@ -3,7 +3,7 @@
 Functionally this is tha same as the first refined prototype, however this one uses MP3 sounds instead of synthesizers and the moisture slider controls a lowpass filter value instead of detuning.
 ## What does this example explore?
 This prototype explores one of the possible applications of how one might connect Tone to the DOM with a concrete example of our Bee project. A further exploration of this would be to connect it through Node Express and Johnny Five to an arduino with the correct corresponding sensors.  
-## Installation
+## Installation & usage
 For all examples i use the Tone.js CDN:
 > <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>
 To use tone this way you only need to put this script tag in the body of the main HTML document of any new Tone projects.
