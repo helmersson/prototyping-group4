@@ -1,11 +1,14 @@
 
 //Renato Ribeiro bee prototype 2021 API LAB
 
+//Instantiate distance Slider
 const distanceSlider = document.getElementById("distance");
 
 //Instantiate two buttons to start and stop sound
 const button = document.getElementById("button");
 const buttonStop = document.getElementById("buttonStop");
+
+
 
 //*------------------------------------------------------------------------------------- */
 //create noise synth
@@ -59,20 +62,62 @@ let pitchShift = new Tone.PitchShift({
     feedback: 0
 }).connect(filterFour);
 
-
-
-
 //create distortion and connect to filterFour
 let distortion = new Tone.Distortion({
     distortion: 0.2,
     oversample: "2x"
 }).connect(pitchShift);
 
-
 //connect the noise to distortion
 noise.connect(distortion);
 
-//*------------------------------------------------------------------------------------*//
+
+/*---------------------------------------------------------------------------------------*/
+//Initialize pitch and slider values
+
+pitchShift.pitch = 0;
+distanceSlider.value = 50;
+
+//Define pitch and slider range
+
+let maxDistanceRange = 50;
+let minDistanceRange = 1;
+let minPitchShiftRange = 20;
+let maxPitchShiftRange = 0;
+
+//Define variable to store previous slider value
+
+let prevVal = -1;
+
+
+//define what slider does
+
+distanceSlider.oninput = function () {
+    output.innerHTML = this.value;
+
+    //map distance value into pitchShift value 
+    // taken from: https://stackoverflow.com/questions/8684327/c-map-number-ranges
+    x = (this.value - minDistanceRange) / (maxDistanceRange - minDistanceRange);
+    result = minPitchShiftRange + (maxPitchShiftRange - minPitchShiftRange) * x;
+
+    //round to no decimal cases(pitch value doesn't have decimal cases)
+    currentVal = result.toFixed(0);
+
+    //Because rounding to no decimal cases makes the program call the same value multiple times
+    //a condition is created. Only updates the pitch value if the current slider value (currentVal)
+    //is different from the previous slider value (prevVal)
+
+
+
+    if (currentVal != prevVal) {
+        //set pitchShift value with current slider value
+        pitchShift.pitch = currentVal;
+        //update previous slider value variable
+        prevVal = currentVal;
+    }
+};
+
+
 //define what click on buttons do
 button.addEventListener("click", () => {
     Tone.start();
@@ -86,25 +131,6 @@ buttonStop.addEventListener("click", () => {
     //reload page so the sound doesn't add on top of the previous sound when "start" is pressed.
     location.reload(true);
 });
-
-//define what slider does
-
-distanceSlider.oninput = function () {
-    output.innerHTML = this.value;
-
-    //transform distance value into pitchShift value 
-    // taken from: https://stackoverflow.com/questions/8684327/c-map-number-ranges
-    x = (this.value - 1) / (50 - 1);
-    result = 20 + (3 - 20) * x;
-
-    //round to no decimal cases(pitch value doesn't have decimal cases)
-    resultRound = result.toFixed(0);
-
-    //set pitchShift value
-    pitchShift.pitch = resultRound;
-
-};
-
 
 //present distance value on page
 let output = document.getElementById("value");
