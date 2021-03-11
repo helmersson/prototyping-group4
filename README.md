@@ -10,6 +10,7 @@ Authors:
 
 ## The project (add as we go along)
 We have chosen to look into the **[Tone.JS](https://tonejs.github.io/)** API as our physical prototype makes great use of different sounds. To get started we have used both the available tutorials and documentation on the Tone.js website and some tutorials on Youtube.
+**https://www.youtube.com/watch?v=wIxqNrooWws**
 
 
 ### The  repository should contain:

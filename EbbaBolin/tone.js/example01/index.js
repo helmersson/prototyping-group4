@@ -7,7 +7,7 @@ const synth3 = new Tone.Synth().toDestination();
 const now = Tone.now();
 
 
-//made eventlistners to each button. mousedown
+//made eventlistners to each button. get element by id from html. add mousedown
 document.getElementById("button").addEventListener("mousedown", buttonzero);
 document.getElementById("button1").addEventListener("mousedown", buttonone);
 document.getElementById("button2").addEventListener("mousedown", buttontwo);

@@ -11,17 +11,18 @@ for(var octave = 0; octave <2; octave ++)
 {
 
 for(var i = 0; i < notes.length; i++){
-
+//hasSharp
     var hasSharp = true;
     var note = notes[i];
     if (note == 'E' || note == 'B' )
     hasSharp = false;
     //html sting with div inside - white note
     //template strings
-    html += `<div class='whitenote' onmousedown='noteDown(this, false)' onmouseup='noteUp(this,false)' onmouseleave='noteUp(this,false)' data-note='${note + (octave+4)}'>`;
+    //adding mouseevents to the notes
+    html += `<div class='whitenote' onmousedown='noteDown(this, false)' onmouseup='noteUp(this,false)' onmouseleave='noteUp(this,false)' data-note='${note + (octave+5)}'>`;
     //adding black notes
     if (hasSharp) {
-      html += `<div class='blacknote' onmousedown='noteDown(this, true)' onmouseup='noteUp(this, true)' onmouseleave='noteUp(this,true)' data-note='${note + '#' + (octave+4)}'>
+      html += `<div class='blacknote' onmousedown='noteDown(this, true)' onmouseup='noteUp(this, true)' onmouseleave='noteUp(this,true)' data-note='${note + '#' + (octave+2)}'>
            
       </div>`;
     }
@@ -42,6 +43,6 @@ function noteDown (elem,isSharp) {
     elem.style.background = isSharp ? 'black' : '#ccc';
     //trigger the note
     synth.triggerAttackRelease(note,"16n");
-    //divid the white and balck note so you an press them seperatly
+    //divide the white and balck note so you an press them seperatly
     event.stopPropagation();
 }
