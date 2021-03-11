@@ -10,40 +10,50 @@ distanceText.textContent = 1.5;
 moistureText.textContent = 100;
 
 //Get references to the MP3 files!
-const bee01 = new Tone.Player("./assets/Bee01.mp3").toDestination();
+const bee01 = new Tone.Player("./assets/Bee01.mp3");
 bee01.loop = true;
 bee01.autostart = true;
 bee01.mute = true;
 bee01.volume.value = -6;
 
-const bee02 = new Tone.Player("./assets/Bee02.mp3").toDestination();
+const bee02 = new Tone.Player("./assets/Bee02.mp3");
 bee02.loop = true;
 bee02.autostart = true;
 bee02.mute = true;
 bee02.volume.value = -6;
 
-const bee03 = new Tone.Player("./assets/Bee03.mp3").toDestination();
+const bee03 = new Tone.Player("./assets/Bee03.mp3");
 bee03.loop = true;
 bee03.autostart = true;
 bee03.mute = true;
 bee03.volume.value = -6;
 
-const beeHive = new Tone.Player("./assets/BeeHive.mp3").toDestination();
+const beeHive = new Tone.Player("./assets/BeeHive.mp3");
 beeHive.loop = true;
 beeHive.autostart = true;
 beeHive.mute = true;
 beeHive.volume.value = -6;
 
-const forestSounds = new Tone.Player("./assets/ForestSounds.mp3").toDestination();
+const forestSounds = new Tone.Player("./assets/ForestSounds.mp3");
 forestSounds.loop = true;
 forestSounds.autostart = true;
 forestSounds.mute = true;
 forestSounds.volume.value = 0;
 
-//Trying out filters
-const filter = new Tone.Filter(1500, "highpass").toDestination();
+//Declaring the lowpass filter
+const filter = new Tone.Filter({
+  type: "lowpass",
+  frequency: 440,
+  rolloff: -12,
+  Q: 1,
+  gain: -20
+}).toDestination();
 
+//Connect the MP3's to the filter
 bee01.connect(filter);
+bee02.connect(filter);
+bee03.connect(filter);
+beeHive.connect(filter);
 forestSounds.connect(filter);
 
 distanceSlider.oninput = () => {
@@ -79,10 +89,15 @@ distanceSlider.oninput = () => {
   distanceText.innerHTML = val / 100;
 }
 
+//The moisture slider changes the affected frequencies of the lowpass filter
 moistureSlider.oninput = () => {
-
+  filter.frequency.value = map(moistureSlider.value, 0, 100, 100, 10000);
+  console.log(filter.frequency.value);
   moistureText.innerHTML = moistureSlider.value;
 }
+
+//A function that maps one set of numbers to another
+const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
 
 //TODO
 //  1.Get filters working with the moisture slider
