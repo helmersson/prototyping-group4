@@ -16,7 +16,8 @@ Authors:
 We have chosen to look into the **[Tone.JS](https://tonejs.github.io/)** API as our physical prototype makes great use of different sounds. To get started we have used both the available tutorials and documentation on the Tone.js website and some tutorials on Youtube. 
 
 ## Get started - installation 
-We instaled tone.js with CDN. 
+We installed tone.js with CDN. 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script>
 
 ## Sources
 The examples come from exercises on the **[Tone.JS](https://tonejs.github.io/)** website and from tutorials on Youtube.com. 
