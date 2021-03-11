@@ -2,7 +2,6 @@
 This is the shared repository for Group 4 (Cowboy Cactus Prototyping Department) during the API lab.
 
 Authors: 
-- Cristophe Berbec
 - Ebba Bolin
 - Olof Ingelsten
 - Renato Ribeiro
@@ -10,7 +9,10 @@ Authors:
 
 ## The project (add as we go along)
 We have chosen to look into the **[Tone.JS](https://tonejs.github.io/)** API as our physical prototype makes great use of different sounds. To get started we have used both the available tutorials and documentation on the Tone.js website and some tutorials on Youtube.
+**https://www.youtube.com/watch?v=wIxqNrooWws**
 
+## Sources
+The examples come from exercises on the **[Tone.JS](https://tonejs.github.io/)** website and from tutorials on Youtube.com.
 
 ### The  repository should contain:
 
