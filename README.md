@@ -19,7 +19,7 @@ We have chosen to look into the **[Tone.JS](https://tonejs.github.io/)** API as 
 We instaled tone.js with CDN. 
 
 ## Sources
-The examples come from exercises on the **[Tone.JS](https://tonejs.github.io/)** website and from tutorials on Youtube.com. **https://www.youtube.com/watch?v=wIxqNrooWws**
+The examples come from exercises on the **[Tone.JS](https://tonejs.github.io/)** website and from tutorials on Youtube.com. 
 
 
 ### The  repository should contain:
