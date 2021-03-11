@@ -12,4 +12,5 @@ We have chosen to look into the **[Tone.JS](https://tonejs.github.io/)** API as 
 
 ## Get started - installation 
 We installed tone.js with a CDN. 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js"></script> 
 ## Sources
