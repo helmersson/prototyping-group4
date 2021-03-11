@@ -1,0 +1,6 @@
+#bpmSlider{
+  transform: rotateY(180deg);
+  cursor: pointer;
+  background: url('./soundtrack/Untitled-1.png');
+}
+
