@@ -9,8 +9,10 @@ This example prototypes how the distance influences the bee sound. Using a slide
 
 This prototype explores how distance can be used to influence the sound output of the bee.
 It is also useful for user testing in a quick manner.
-### Installation
-The installation is done by using Tone.js CDN (https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js).
+### Installation and how to use it
+The installation is done by using Tone.js CDN (https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.10/Tone.js) into the html file.
+
+To use the prototype open the index.html file on a browser.
 
 ### Contributions
 The code was done by Renato Ribeiro.
