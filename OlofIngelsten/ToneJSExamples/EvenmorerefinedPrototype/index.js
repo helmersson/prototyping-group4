@@ -39,7 +39,12 @@ forestSounds.loop = true;
 forestSounds.autostart = true;
 forestSounds.mute = true;
 forestSounds.volume.value = 0;
-//
+
+//Trying out filters
+const filter = new Tone.Filter(1500, "highpass").toDestination();
+
+bee01.connect(filter);
+forestSounds.connect(filter);
 
 distanceSlider.oninput = () => {
   Tone.start();
