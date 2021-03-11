@@ -98,7 +98,3 @@ moistureSlider.oninput = () => {
 
 //A function that maps one set of numbers to another
 const map = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
-
-//TODO
-//  1.Get filters working with the moisture slider
-//  2.Connect to arduino
