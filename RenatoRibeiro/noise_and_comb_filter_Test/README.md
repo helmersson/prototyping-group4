@@ -14,3 +14,5 @@ To use the prototype open the index.html file on a browser.
 The code was done by Renato Ribeiro.
 
 This prototype uses the "Noise", "Filter","CombFilter", and "Distortion" examples from the Tone.js library(https://tonejs.github.io/).
+
+Thanks to Peter Tolstrup Aagesen for the help.

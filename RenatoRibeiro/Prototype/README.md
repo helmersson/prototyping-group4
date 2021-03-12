@@ -22,4 +22,4 @@ It used this synthesis tutorial as inspiration : "https://vimeo.com/358151958"
 
 The mapping function was made with the help of "https://stackoverflow.com/questions/8684327/c-map-number-ranges"
 
-
+Thanks to Peter Tolstrup Aagesen for the help.
