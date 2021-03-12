@@ -1,6 +1,35 @@
 #bpmSlider{
   transform: rotateY(180deg);
   cursor: pointer;
-  background: url('./soundtrack/Untitled-1.png');
+  background-color: #374167;
+  color: #374167;
+}
+body {
+  background-color: #F3E282;
+  width: 100%;
 }
 
+#button {
+  
+  
+}
+
+div {
+  box-shadow: 0px 10px 20px #374167;
+  border-radius: 10px;
+  /* background-color: white; */
+  background-color: #374167;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 25%;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+}
+
+h1 {
+  color: rgb(238, 238, 238);
+}

@@ -6,9 +6,9 @@ const bpmText = document.getElementById("bpmText");
 let playerOn = true
 
 
-//will play as soon as it's loaded
+//Creates the player and sets its values
 var player = new Tone.Player({
-	"url" : "./soundtrack/jaws.mp3",
+	"url" : "./assets/jaws.mp3",
 	"autostart" : true,
   "loop" : true,
   "volume" : bpm.value
@@ -23,7 +23,9 @@ document.getElementById('button').addEventListener('click', () => {
     player.mute = true;
   }
 })
-//connects the bpm value with the slider and the text telling you what bpm your on
+//connects the slider with the text above it and also changes the volume
+//It also converts the bpm value into an integer if you want to do some crazy math
+//mutes the sound when you go to max range and unmutes everywhere else
 bpm.oninput = () => {
   player.volume.value = bpm.value
   bpmText.textContent = parseInt(-bpm.value);
